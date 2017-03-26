@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @routine.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @routine.desc %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @routine.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @routine.end_date %>
+</p>
+
+<p>
+  <strong>Routine type:</strong>
+  <%= @routine.routine_type_id %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @routine.days %>
+</p>
+
+<%= link_to 'Edit', edit_routine_path(@routine) %> |
+<%= link_to 'Back', routines_path %>
