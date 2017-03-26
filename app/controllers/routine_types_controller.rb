@@ -1,4 +1,5 @@
 class RoutineTypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_routine_type, only: [:show, :edit, :update, :destroy]
 
   # GET /routine_types

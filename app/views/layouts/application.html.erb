@@ -3,12 +3,108 @@
   <head>
     <title>Inception</title>
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" ></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
-    <%= yield %>
+		<% if user_signed_in? %>     
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+						</button>
+						<a class="navbar-brand" href="/">Inception</a>
+					</div>
+					<ul class="nav navbar-nav">      
+						<li 
+							<% if controller.controller_name == "activities" %>
+							class="active"
+							<% end %>>
+
+							<%= link_to activities_path do %>
+							Activities
+							<% end %>
+						</li>
+
+						<li
+							<% if controller.controller_name == "routines" %>
+							class="active"
+							<% end %>>
+
+							<%= link_to routines_path do %>
+							Routine
+							<% end %>
+						</li> 
+
+						<li
+							<% if controller.controller_name == "categories" %>
+							class="active"
+							<% end %>>
+
+							<%= link_to categories_path do %>
+							Categories
+							<% end %>
+						</li> 
+
+						<li
+							<% if controller.controller_name == "reminders" %>
+							class="active"
+							<% end %>>
+
+							<%= link_to "Reminder", reminders_path %> 
+						</li> 
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">   
+						<li>        
+						<%= link_to "Edit Account", edit_user_registration_path %>
+						</li>
+						<li>
+						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		<% else %>
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+					<a class="navbar-brand" href="/">Inception</a>
+					</div>
+					<ul class="nav navbar-nav">      
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right">      
+
+					<li><%= link_to "Login", new_user_session_path %></li>
+					<li><%= link_to "Sign Up", new_user_registration_path %></li>
+
+					</ul>
+				</div>
+			</nav>
+		<% end %>
+
+  	<div class="container">
+    	<%= yield %>
+   	</div>
   </body>
 </html>
