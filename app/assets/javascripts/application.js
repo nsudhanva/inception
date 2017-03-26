@@ -15,5 +15,9 @@
 //= require_tree .
 
 $(document).ready(function(){
-    $('table').DataTable();
+    $('table').DataTable({
+    	responsive: true
+    });
+
+    $('select').select2();
 });

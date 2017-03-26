@@ -11,6 +11,9 @@
 
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" ></script>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -25,7 +28,7 @@
   <body>
 		<% if user_signed_in? %>     
 			<nav class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 						<span class="icon-bar"></span>
@@ -34,54 +37,56 @@
 						</button>
 						<a class="navbar-brand" href="/">Inception</a>
 					</div>
-					<ul class="nav navbar-nav">      
-						<li 
-							<% if controller.controller_name == "activities" %>
-							class="active"
-							<% end %>>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">      
+							<li 
+								<% if controller.controller_name == "activities" %>
+								class="active"
+								<% end %>>
 
-							<%= link_to activities_path do %>
-							Activities
-							<% end %>
-						</li>
+								<%= link_to activities_path do %>
+								Activities
+								<% end %>
+							</li>
 
-						<li
-							<% if controller.controller_name == "routines" %>
-							class="active"
-							<% end %>>
+							<li
+								<% if controller.controller_name == "routines" %>
+								class="active"
+								<% end %>>
 
-							<%= link_to routines_path do %>
-							Routine
-							<% end %>
-						</li> 
+								<%= link_to routines_path do %>
+								Routine
+								<% end %>
+							</li> 
 
-						<li
-							<% if controller.controller_name == "categories" %>
-							class="active"
-							<% end %>>
+							<li
+								<% if controller.controller_name == "categories" %>
+								class="active"
+								<% end %>>
 
-							<%= link_to categories_path do %>
-							Categories
-							<% end %>
-						</li> 
+								<%= link_to categories_path do %>
+								Categories
+								<% end %>
+							</li> 
 
-						<li
-							<% if controller.controller_name == "reminders" %>
-							class="active"
-							<% end %>>
+							<li
+								<% if controller.controller_name == "reminders" %>
+								class="active"
+								<% end %>>
 
-							<%= link_to "Reminder", reminders_path %> 
-						</li> 
-					</ul>
+								<%= link_to "Reminder", reminders_path %> 
+							</li> 
+						</ul>
 
-					<ul class="nav navbar-nav navbar-right">   
-						<li>        
-						<%= link_to "Edit Account", edit_user_registration_path %>
-						</li>
-						<li>
-						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-						</li>
-					</ul>
+						<ul class="nav navbar-nav navbar-right">   
+							<li>        
+							<%= link_to "Edit Account", edit_user_registration_path %>
+							</li>
+							<li>
+							<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</nav>
 		<% else %>
