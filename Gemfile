@@ -5,6 +5,18 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'cancancan'
+gem 'ransack'
+gem 'chartkick'
+gem 'httparty'
+gem 'sendgrid'
+gem "mini_magick"
+gem 'carrierwave', '~> 1.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem "nested_form"
+gem 'devise'
+gem 'pry-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
