@@ -1,13 +1,16 @@
 <%= form_for(timer) do |f| %>
   <% if timer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(timer.errors.count, "error") %> prohibited this timer from being saved:</h2>
+    <div class="alert alert-danger alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <div id="error_explanation">
+        <h2><%= pluralize(timer.errors.count, "error") %> prohibited this timer from being saved:</h2>
 
-      <ul>
-      <% timer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% timer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
