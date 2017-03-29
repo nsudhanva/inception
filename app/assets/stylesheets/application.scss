@@ -16,3 +16,20 @@
 body { 
     padding-top: 65px; 
 }
+
+h1{
+	text-align: center;
+}
+
+.form-box{
+	width: 80%;
+	height: auto;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	padding: 30px;
+}
+
+.top-left-corner{
+	position: absolute;
+	top: 52px;
+	left: 1px;
+}

@@ -1,9 +1,20 @@
-<p id="notice"><%= notice %></p>
+<% if alert %>
+  <div class="alert alert-danger alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= alert %>
+  </div>
+<% end %>
+<% if notice %>
+  <div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= notice %>
+  </div>
+<% end %>
 
 <p>
   <strong>Title:</strong>
   <%= @routine_type.title %>
 </p>
 
-<%= link_to 'Edit', edit_routine_type_path(@routine_type) %> |
+<%= link_to 'Edit', edit_routine_type_path(@routine_type) %>
 <%= link_to 'Back', routine_types_path %>

@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% if alert %>
+  <div class="alert alert-danger alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= alert %>
+  </div>
+<% end %>
+<% if notice %>
+  <div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= notice %>
+  </div>
+<% end %>
 
 <p>
   <strong>Title:</strong>
@@ -30,5 +41,5 @@
   <%= @routine.days %>
 </p>
 
-<%= link_to 'Edit', edit_routine_path(@routine) %> |
+<%= link_to 'Edit', edit_routine_path(@routine) %>
 <%= link_to 'Back', routines_path %>
