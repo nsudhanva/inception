@@ -15,9 +15,10 @@
 //= require_tree .
 
 $(document).ready(function(){
-    $('table').DataTable({
-    	responsive: true
-    });
+  $('table').DataTable({
+  	responsive: true
+  });
 
-    $('select').select2();
+  $('select').select2();
+ 	$("span.select2").css("width", "+=15");	
 });

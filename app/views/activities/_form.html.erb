@@ -33,12 +33,22 @@
 
   <div class="field">
     <%= f.label :is_completed %>
-    <%= f.text_field :is_completed %>
+    <%= f.select :is_completed, options_for_select(["True", "False"]) %>
   </div>
 
   <div class="field">
-    <%= f.label :routine_id %>
-    <%= f.number_field :routine_id %>
+    <label>Select Routine: </label>
+    <%= f.collection_select :routine_id, Routine.all , :id, :title, include_blank: "Select Routine" %> <br><br>
+  </div>
+
+  <div class="field">
+    <label>Select Categories: </label><br>
+
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :title do |b| %> 
+    <%= b.check_box %> 
+    <%= b.label %> 
+    <% end %>
+
   </div>
 
   <div class="actions">

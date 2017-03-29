@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :routine_type_id %>
-    <%= f.number_field :routine_type_id %>
+    <label>Select Routine Type: </label>
+    <%= f.collection_select :routine_type_id, RoutineType.all , :id, :title, include_blank: "Select Routine Type" %> <br><br>
   </div>
 
   <div class="field">

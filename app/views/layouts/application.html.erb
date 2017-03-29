@@ -55,7 +55,7 @@
 								<% end %>>
 
 								<%= link_to routines_path do %>
-								Routine
+								Routines
 								<% end %>
 							</li> 
 
@@ -74,11 +74,22 @@
 								class="active"
 								<% end %>>
 
-								<%= link_to "Reminder", reminders_path %> 
+								<%= link_to "Reminders", reminders_path %> 
 							</li> 
 						</ul>
 
-						<ul class="nav navbar-nav navbar-right">   
+						<ul class="nav navbar-nav navbar-right">  
+							<li>
+								<div class="dropdown navbar-btn">
+								  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    Types
+								    <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								    <li><%= link_to "Routine Types", routine_types_path %></li>
+								  </ul>
+								</div>
+							</li> 
 							<li>        
 							<%= link_to "Edit Account", edit_user_registration_path %>
 							</li>
