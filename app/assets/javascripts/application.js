@@ -25,13 +25,14 @@ $(document).ready(function(){
  	$("input[type=text]").addClass("form-control");
 	$("input[type=password]").addClass("form-control");
 	$("input[type=email]").addClass("form-control");
+	$("input[type=number]").addClass("form-control");
 	$("input[type=submit]").addClass("btn btn-primary");
  	$("textarea").addClass("form-control");
  	$("div.field").addClass("form-group");
- 	$("form:not(.new_user)").wrap("<div class='form-box col-md-8 col-md-offset-1'></div>");
+ 	$("form:not(.new_user)").wrap("<div class='form-box col-md-8 col-md-offset-2'></div>");
  	$("form.new_user").wrap("<div class='form-box-login col-md-8 col-md-offset-3'></div>");
 
- 	$("a:contains('Back')").empty().append("<button class=\"btn btn-primary top-left-corner\">Back</button>");
+ 	$("a:contains('Back')").empty().append("<button class=\"btn btn-primary top-left-corner\" style=\"position: fixed\">Back</button>");
 	$("a:contains('Back')").css("color", "white");
 	$("button:contains('Back')").prepend("<span class=\"glyphicon glyphicon-menu-left\"></span>");
 	$("a:contains('Show')").empty().append("<button class=\"btn btn-info\">Show</button>").css("color", "white");
