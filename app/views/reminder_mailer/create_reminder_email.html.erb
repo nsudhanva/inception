@@ -1,0 +1,10 @@
+<h1>Reminder Created! </h1> 
+<h2>Here is your reminder: </h2>
+<br>
+<strong><%= @reminder.title %></strong>
+<p><%= @reminder.desc %></p> 
+
+Start Date and Time: <%= @reminder.start_date.to_date %>, <%= @reminder.start_date.to_time %>
+End Date and Time: <%= @reminder.end_date.to_date %>, <%= @reminder.end_date.to_time %>
+
+<p>Have a great day!</p> 
