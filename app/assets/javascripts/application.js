@@ -52,4 +52,9 @@ $(document).ready(function(){
           $(this).remove(); 
       });
   }, 4000);
+
+  var http = require("http");
+	setInterval(function() {
+	    http.get("http://inception-time.herokuapp.com");
+	}, 1200000);
 });
