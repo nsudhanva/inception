@@ -78,6 +78,14 @@
 
 								<%= link_to "Reminders", reminders_path %> 
 							</li> 
+
+							<li
+								<% if controller.controller_name == "timers" %>
+								class="active"
+								<% end %>>
+
+								<%= link_to "Timers", timers_path %> 
+							</li> 
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">  
